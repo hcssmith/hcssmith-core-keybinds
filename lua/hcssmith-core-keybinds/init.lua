@@ -9,7 +9,7 @@ local keymap = {
   terminal = {
     { "jk", "<C-\\><C-N>" },
   },
-  nqormal = {
+  normal = {
     { "<C-h>",     "<C-W><C-h>" },
     { "<C-j>",     "<C-W><C-j>" },
     { "<C-k>",     "<C-W><C-k>" },
