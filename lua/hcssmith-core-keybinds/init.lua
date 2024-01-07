@@ -20,7 +20,7 @@ local keymap = {
   },
   visual = {
     { 'K', ":m '>+1<CR>gv=gv'" },
-    { 'J', "<-2<CR>gv=gv" }
+    { 'J', ":m '<-2<CR>gv=gv'" }
   }
 }
 
