@@ -1,12 +1,5 @@
 local M = {}
 
-local function move_line_down()
-  vim.cmd.m("'>+1<CR>gv=gv")
-end
-
-local function move_line_up()
-  vim.cmd.m("'<-2<CR>gv=gv")
-end
 
 ---@type KeyBindList
 local keymap = {
@@ -27,8 +20,8 @@ local keymap = {
     { "<C-Right>", "<C-W><C-l>" },
   },
   visual = {
-    { 'J', function() move_line_down() end },
-    { 'K', function() move_line_up() end }
+    { 'J', ":m '>+1<CR>gv=gv", { silent = true } },
+    { 'K', ":m '<-2<CR>gv=gv", { silent = true } }
   }
 }
 
