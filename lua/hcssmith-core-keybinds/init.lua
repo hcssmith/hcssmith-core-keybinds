@@ -1,11 +1,11 @@
 local M = {}
 
 local function move_line_down()
-  vim.cmd.m(":m '>+1<CR>gv=gv")
+  vim.cmd.m("'>+1<CR>gv=gv")
 end
 
 local function move_line_up()
-  vim.cmd.m(":m '<-2<CR>gv=gv")
+  vim.cmd.m("'<-2<CR>gv=gv")
 end
 
 ---@type KeyBindList
