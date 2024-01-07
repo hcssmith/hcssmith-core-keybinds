@@ -17,6 +17,10 @@ local keymap = {
     { "<C-Down>",  "<C-W><C-j>" },
     { "<C-Up>",    "<C-W><C-k>" },
     { "<C-Right>", "<C-W><C-l>" },
+  },
+  visual = {
+    { 'K', ":m '>+1<CR>gv=gv'" },
+    { 'J', "<-2<CR>gv=gv" }
   }
 }
 
