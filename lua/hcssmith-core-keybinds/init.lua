@@ -1,5 +1,13 @@
 local M = {}
 
+local function move_line_down()
+  vim.cmd.m(":m '>+1<CR>gv=gv")
+end
+
+local function move_line_up()
+  vim.cmd.m(":m '<-2<CR>gv=gv")
+end
+
 ---@type KeyBindList
 local keymap = {
   insert = {
@@ -8,7 +16,7 @@ local keymap = {
   terminal = {
     { "jk", "<C-\\><C-N>" },
   },
-  normal = {
+  nqormal = {
     { "<C-h>",     "<C-W><C-h>" },
     { "<C-j>",     "<C-W><C-j>" },
     { "<C-k>",     "<C-W><C-k>" },
@@ -19,8 +27,8 @@ local keymap = {
     { "<C-Right>", "<C-W><C-l>" },
   },
   visual = {
-    { 'J', ":m '>+1<CR>gv=gv" },
-    { 'K', ":m '<-2<CR>gv=gv" }
+    { 'J', function() move_line_down() end },
+    { 'K', function() move_line_up() end }
   }
 }
 
