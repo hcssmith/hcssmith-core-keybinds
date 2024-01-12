@@ -18,10 +18,10 @@ local keymap = {
     { "<C-Down>",  "<C-W><C-j>" },
     { "<C-Up>",    "<C-W><C-k>" },
     { "<C-Right>", "<C-W><C-l>" },
-    { ']q',        ':cn',       { silent = true } },
-    { '[q',        ':cp',       { silent = true } },
-    { ']Q',        ':clast',    { silent = true } },
-    { '[Q',        ':cfirst',   { silent = true } }
+    { ']q',        ':cn<CR>',     { silent = true } },
+    { '[q',        ':cp<CR>',     { silent = true } },
+    { ']Q',        ':clast<CR>',  { silent = true } },
+    { '[Q',        ':cfirst<CR>', { silent = true } }
   },
   visual = {
     { 'J', ":m '>+1<CR>gv=gv", { silent = true } },
