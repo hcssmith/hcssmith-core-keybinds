@@ -21,7 +21,22 @@ local keymap = {
     { ']q',        ':cn<CR>',     { silent = true } },
     { '[q',        ':cp<CR>',     { silent = true } },
     { ']Q',        ':clast<CR>',  { silent = true } },
-    { '[Q',        ':cfirst<CR>', { silent = true } }
+    { '[Q',        ':cfirst<CR>', { silent = true } },
+    { '<leader>qf', function()
+      local qf_exists = false
+      for _, win in pairs(vim.fn.getwininfo()) do
+        if win["quickfix"] == 1 then
+          qf_exists = true
+        end
+      end
+      if qf_exists == true then
+        vim.cmd "cclose"
+        return
+      end
+      if not vim.tbl_isempty(vim.fn.getqflist()) then
+        vim.cmd "copen"
+      end
+    end }
   },
   visual = {
     { 'J', ":m '>+1<CR>gv=gv", { silent = true } },
